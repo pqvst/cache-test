@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  app:  
+    build: .
+    environment:
+      - NODE_ENV=production
+      - VIRTUAL_HOST=cache-test.pqvst.com
+    logging:
+      options:
+        max-size: 10m
+    restart: always
+    
+networks:
+  default:
+    external:
+      name: router_default
